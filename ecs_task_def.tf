@@ -1,12 +1,8 @@
-# __generated__ by Terraform
-# Please review these resources and move them into your main configuration files.
-
-# __generated__ by Terraform from "arn:aws:ecs:us-east-1:440224422004:task-definition/ecr-task-def:2"
 resource "aws_ecs_task_definition" "ecr-task-def" {
   container_definitions = jsonencode([{
     cpu       = 0
     essential = true
-    image     = "440224422004.dkr.ecr.us-east-1.amazonaws.com/ecr-repo"
+    image     = "konto.dkr.ecr.us-east-1.amazonaws.com/ecr-repo"
     logConfiguration = {
       logDriver = "awslogs"
       options = {
@@ -26,7 +22,7 @@ resource "aws_ecs_task_definition" "ecr-task-def" {
     }]
   }])
   cpu                      = jsonencode(1024)
-  execution_role_arn       = "arn:aws:iam::440224422004:role/ECS-TASK-EXECUTION-ROLE"
+  execution_role_arn       = "arn:aws:iam::konto:role/ECS-TASK-EXECUTION-ROLE"
   family                   = "ecr-task-def"
   ipc_mode                 = null
   memory                   = jsonencode(3072)
